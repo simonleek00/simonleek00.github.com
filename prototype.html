@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riverrun.</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="container">
+        <h3><i>Explore the banks of the beautiful Seekonk.</i></h3>
+        <div id="game-window">
+            <!-- Scene image with an id "scene" -->
+            <img id="scene" src="rail_north.png" alt="Scene">
+            <!-- Arrow buttons for turning left and right -->
+            <button class="arrow-button arrow-button-left" onclick="look(-1)">&lt;</button>
+            <button class="arrow-button arrow-button-right" onclick="look(1)">&gt;</button>
+        </div>
+        <a href="newhomepage.html">return home</a>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Add event listener to the scene image
+        document.getElementById("scene").addEventListener("click", function(event) {
+            // Get the position of the image on the page
+            const imgRect = event.target.getBoundingClientRect();
+            // Get the coordinates of the click relative to the image
+            const x = event.clientX - imgRect.left;
+            const y = event.clientY - imgRect.top;
+
+            // Call the move function with the coordinates
+            move(x, y);
+        });
+    </script>
+</body>
+</html>
