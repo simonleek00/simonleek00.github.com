@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>stereos</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .slideshow-container {
+        position: relative;
+        max-width: 900px;
+        margin: auto;
+    }
+
+    .slideshow-container img {
+        width: 100%;
+        display: block;
+    }
+
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    .prev:hover, .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .numbertext {
+        position: absolute;
+        top: 0;
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+
+    nav {
+        display: flex;
+        justify-content: center;
+    }
+
+</style>
+</head>
+<body>
+
+<div class="slideshow-container">
+    
+    <nav>
+        <a href="newhomepage.html">home</a> /
+        <a href="ceramic.html">ceramic</a> /
+        <a href="game.html">game</a> /
+        <a href="video.html">video</a> /
+        <a href="writing.html">writing</a>
+    </nav>
+    <h2>stereos</h2>
+    <span class="prev" onclick="plusSlides(-1)">❮</span>
+    <span class="next" onclick="plusSlides(1)">❯</span>
+    <div class="numbertext" id="current-slide">1/7</div>
+    <img class="slides" src="new scans/dumpster.jpg" style="display: block;">
+    <img class="slides" src="new scans/inlet.jpg" style="display: block;">
+    <img class="slides" src="new scans/shore and house.jpg" style="display: block;">
+    <img class="slides" src="new scans/houses 2.jpg" style="display: block;">
+    <img class="slides" src="new scans/chopped logs.jpg" style="display: block;">
+    <img class="slides" src="new scans/blue shake.jpeg" style="display: block;">
+    <img class="slides" src="new scans/flats.jpg" style="display: block;">
+    <img class="slides" src="new scans/double exp.jpeg" style="display: block;">
+</div>
+
+
+
+<script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function showSlides(n) {
+        let i;
+        const slides = document.getElementsByClassName("slides");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+        document.getElementById("current-slide").innerText = slideIndex + "/" + slides.length;
+    }
+</script>
+
+</body>
+</html>
