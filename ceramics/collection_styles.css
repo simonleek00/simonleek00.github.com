@@ -1,0 +1,89 @@
+body {
+    font-family: 'Palatino', sans-serif; /* Use Helvetica */
+    color: #dddddd; /* White color */
+    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scrolling on body */
+    overflow-y: hidden; /* Prevent vertical scrolling on body */
+    background-color: #000000; /* Black background */
+    margin: 0; /* Remove default margin */
+    height: 100vh; /* Set height to 100% of viewport */
+}
+
+.top-area {
+    position: fixed; /* Fix top area */
+    top: 0; /* Align to top */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust position to center */
+    z-index: 10; /* Ensure on top */
+    text-align: center; /* Center text */
+    margin-top: 10px; /* Space from top */
+}
+
+.title {
+    font-size: 2.5rem; /* Title font size */
+    border: 2px solid #dddddd; /* White outline */
+    padding: 10px; /* Padding inside the border */
+    border-radius: 0; /* No rounded corners */
+}
+
+.image-container {
+    display: flex; /* Flexbox for layout */
+    flex-direction: column; /* Stack children vertically */
+    align-items: center; /* Center items horizontally */
+    padding: 150px 20px; /* Increased padding to move images down */
+    margin-bottom: 80px; /* Add margin to ensure space for bottom navigation */
+    height: calc(100vh - 80px); /* Adjust height to fit without vertical scroll */
+}
+
+.collection {
+    display: flex; /* Flexbox for horizontal layout */
+    flex-direction: row; /* Row direction for images */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    padding: 10px; /* Padding around images */
+    gap: 10px; /* Space between images */
+    white-space: nowrap; /* Prevent line breaks for horizontal scrolling */
+    width: 100%; /* Ensure full width of container */
+}
+
+.collection a {
+    display: inline-block; /* Allow image to be a block for proper spacing */
+    cursor: pointer; /* Change cursor to indicate clickable */
+}
+
+.collection img {
+    width: 60vw; /* Set width to 30% of viewport width */
+    height: 40vw; /* Set height to 30% of viewport height */
+    object-fit: cover; /* Cover the image to maintain aspect ratio */
+    border: 2px solid #dddddd; /* White outline */
+    border-radius: 0; /* No rounded corners */
+}
+
+.bottom-area {
+    position: fixed; /* Fix navigation position */
+    bottom: 0; /* Position it at the bottom */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Adjust position to center */
+    z-index: 10; /* Ensure navigation is on top of other content */
+    display: flex; /* Flexbox for horizontal layout */
+    justify-content: center; /* Center navigation items */
+    margin-top: 20px; /* Space above navigation */
+    padding: 10px; /* Padding around navigation */
+    padding-bottom: 20px; /* Additional padding below navigation */
+    background-color: black; /* Background color for bottom area */
+    width: 100%; /* Ensure full width of bottom area */
+}
+
+.navigation a {
+    margin: 0 15px; /* Space between links */
+    color: #dddddd; /* White color for links */
+    text-decoration: none; /* No underline */
+    border: 2px solid #dddddd; /* White outline */
+    padding: 10px; /* Padding inside the link */
+    border-radius: 0; /* No rounded corners */
+    transition: background-color 0.3s; /* Smooth background change */
+}
+
+.navigation a:hover {
+    background-color: #dddddd; /* White background on hover */
+    color: #000000; /* Black text on hover */
+}

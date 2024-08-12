@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vases</title>
+    <link rel="stylesheet" href="collection_styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <section class="home">
+        <div class="top-area">
+            <h1 class="title">vases</h1>
+        </div>
+        <div class="image-container"> 
+            <div class="collection">
+                <script>
+                    const collectionFolder = 'images/vases/'; // Adjust folder name as needed
+                    let imageIndex = 1;
+
+                    function loadImages() {
+                        const img = new Image();
+                        img.src = `${collectionFolder}image${imageIndex}.jpg`; // Adjust image naming convention if needed
+                        
+                        img.onload = () => {
+                            const link = document.createElement('a'); // Create a link element
+                            link.href = img.src; // Set the link to the image source
+
+                            const imgElement = document.createElement('img');
+                            imgElement.src = img.src;
+                            imgElement.alt = `Image ${imageIndex}`; // Alt text for accessibility
+
+                            link.appendChild(imgElement); // Append the image to the link
+                            document.querySelector('.collection').appendChild(link); // Append the link to the collection
+                            imageIndex++; // Increment to load the next image
+                            loadImages(); // Recursively load the next image
+                        };
+
+                        img.onerror = () => {
+                            console.log(`Finished loading images up to image${imageIndex - 1}.`);
+                        };
+                    }
+
+                    loadImages(); // Start loading images
+                </script>
+            </div>
+        </div>
+        <div class="bottom-area">
+            <nav class="navigation">
+                <a href="ceramics_home.html">home</a>
+            </nav>
+        </div>
+    </section>
+</body>
+</html>
