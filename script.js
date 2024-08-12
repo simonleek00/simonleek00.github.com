@@ -1,4 +1,5 @@
 // Define an object to hold information about the scenes and directions
+// blah
 const gameData = {
     currentScene: "rail", // Default starting scene
     currentDirection: "north", // Default starting direction
