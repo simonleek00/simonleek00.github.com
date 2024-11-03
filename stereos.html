@@ -9,109 +9,85 @@
         margin: 0;
         padding: 0;
         height: 100%;
+        font-family: 'Palatino', 'Palatino Linotype', 'Book Antiqua', 'Georgia', serif;
+    }
+
+    .text-container {
+        position: absolute;
+        top: 2%;
+        left: 2%;
+        right: 2%;
+        background-color: rgba(209, 148, 226, 0); /* Adjust the alpha value for transparency if needed */
+        padding: 20px;
+    }
+
+    nav, h2 {
         display: flex;
         justify-content: center;
+    }
+
+    /* Container to control scrolling and center content */
+    .image-gallery {
+        display: flex;
+        flex-direction: column;
         align-items: center;
+        overflow-y: scroll;
+        height: 100vh; /* Full viewport height for vertical scrolling */
+        padding: 10px;
+        scroll-behavior: smooth; /* Optional for smooth scrolling */
     }
 
-    .slideshow-container {
-        position: relative;
-        max-width: 900px;
-        margin: auto;
+    /* Make images stretch to nearly the full width */
+    .image-gallery img {
+        width: 90%; /* Adjust to desired width (90% of viewport width) */
+        max-width: 1000px; /* Optional max width to keep images manageable */
+        margin-bottom: 20px; /* Space between images */
+        object-fit: cover; /* Adjusts image to cover aspect ratio if needed */
     }
 
-    .slideshow-container img {
-        width: 100%;
-        display: block;
+    /* Hide scrollbar for a cleaner look */
+    .image-gallery {
+        scrollbar-width: none; /* Firefox */
     }
 
-    .prev, .next {
-        cursor: pointer;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        width: auto;
-        padding: 16px;
-        margin-top: -22px;
-        color: white;
-        font-weight: bold;
-        font-size: 20px;
-        transition: 0.6s ease;
-        border-radius: 0 3px 3px 0;
-        background-color: rgba(0, 0, 0, 0.5);
-    }
-
-    .next {
-        right: 0;
-        border-radius: 3px 0 0 3px;
-    }
-
-    .prev:hover, .next:hover {
-        background-color: rgba(0, 0, 0, 0.8);
-    }
-
-    .numbertext {
-        position: absolute;
-        top: 0;
-        color: #f2f2f2;
-        font-size: 12px;
-        padding: 8px 12px;
-    }
-
-    nav {
-        display: flex;
-        justify-content: center;
+    .image-gallery::-webkit-scrollbar {
+        display: none; /* Chrome, Safari */
     }
 
 </style>
 </head>
 <body>
-
-<div class="slideshow-container">
-    
-    <nav>
-        <a href="newhomepage.html">home</a> /
-        <a href="ceramic.html">ceramic</a> /
-        <a href="game.html">game</a> /
-        <a href="video.html">video</a> /
-        <a href="writing.html">writing</a>
-    </nav>
     <h2>stereos</h2>
-    <span class="prev" onclick="plusSlides(-1)">❮</span>
-    <span class="next" onclick="plusSlides(1)">❯</span>
-    <div class="numbertext" id="current-slide">1/7</div>
-    <img class="slides" src="new scans/dumpster.jpg" style="display: block;">
-    <img class="slides" src="new scans/inlet.jpg" style="display: block;">
-    <img class="slides" src="new scans/shore and house.jpg" style="display: block;">
-    <img class="slides" src="new scans/houses 2.jpg" style="display: block;">
-    <img class="slides" src="new scans/chopped logs.jpg" style="display: block;">
-    <img class="slides" src="new scans/blue shake.jpeg" style="display: block;">
-    <img class="slides" src="new scans/flats.jpg" style="display: block;">
-    <img class="slides" src="new scans/double exp.jpeg" style="display: block;">
+    <nav>
+        [<a href="index.html">home</a> /
+        <a href="ceramics/ceramics_home.html">ceramic</a> /
+        <a href="game.html">game</a> /
+        <a href="photo.html">photo</a> /
+        <a href="video.html">video</a> /
+        <a href="writing.html">writing</a>]
+    </nav>
+    
+    <div class="image-gallery">
+        These pictures were taken with a stereoscopic pinhole camera I built. 
+        I developed them with coffee and sodium carbonate, then scanned and inverted them. 
+        The tan coffee color inverts to a wonderful blue. 
+        To play the game I built around these photos, navigate to the game page and select Survey Minor. 
+        <img src="new scans/dumpster.jpg">
+        <img src="new scans/shore and house.jpg">
+        <img src="new scans/inlet.jpg">
+        <img src="new scans/double exp.jpeg">
+        <img src="new scans/mound.jpg">
+        <img src="new scans/double exp.jpeg">
+        <img src="new scans/chopped logs.jpg">
+        <img src="new scans/houses 2.jpg">
+        <img src="new scans/treepee.jpg">
+        <img src="new scans/houses 1.jpeg">
+        <img src="new scans/flats.jpg">
+        <img src="new scans/access road.jpg">
+    </div>
+    
+    <a href="stereos.html">[see pinhole stereos]</a>
 </div>
-
-
-
-<script>
-    let slideIndex = 1;
-    showSlides(slideIndex);
-
-    function plusSlides(n) {
-        showSlides(slideIndex += n);
-    }
-
-    function showSlides(n) {
-        let i;
-        const slides = document.getElementsByClassName("slides");
-        if (n > slides.length) { slideIndex = 1 }
-        if (n < 1) { slideIndex = slides.length }
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slides[slideIndex - 1].style.display = "block";
-        document.getElementById("current-slide").innerText = slideIndex + "/" + slides.length;
-    }
-</script>
 
 </body>
 </html>
